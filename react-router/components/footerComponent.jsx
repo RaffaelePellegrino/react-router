@@ -2,7 +2,6 @@ import { NavLink } from "react-router-dom";
 const navmenu = [
     { path: "/", label: "Home" },
     { path: "/posts", label: "Elenco post" },
-    { path: "/contact", label: "Contact Us" },
     { path: "/aboutus", label: "About us" },
   ];
 
