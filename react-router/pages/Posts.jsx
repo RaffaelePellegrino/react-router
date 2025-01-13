@@ -7,35 +7,33 @@ import Card from "../components/card.jsx";
 const apiUrl = "http://localhost:3000"; // Assicurati che il server backend stia girando su questa porta
 
 function MainComponent() {
-  const [posts, setPosts] = useState([]); // Stato per i post
+  const [posts, setPosts] = useState([]); 
 
   useEffect(() => {
-    getData(); // Carica i dati quando il componente viene montato
+    getData(); 
   }, []);
 
-  // Chiamata axios per ottenere i dati dei post
   function getData() {
     axios
-      .get(apiUrl + "/posts") // Richiesta GET al server
+      .get(apiUrl + "/posts")
       .then((res) => {
-        console.log(res.data); // Controlla la risposta della richiesta
-        setPosts(res.data); // Imposta i dati ricevuti nello stato 'posts'
+        console.log(res.data);
+        setPosts(res.data); 
       })
       .catch((error) => {
-        console.log(error); // Gestisci errori di rete o server
+        console.log(error); 
       });
   }
 
-  // Funzione per eliminare un post
   function deleteItem(id) {
     axios
       .delete(apiUrl + "/posts/" + id)
       .then((res) => {
         console.log(res.data);
-        getData(); // Ricarica i dati dopo l'eliminazione del post
+        getData();
       })
       .catch((error) => {
-        console.log(error); // Gestisci errori di rete o server
+        console.log(error);
       });
   }
 
